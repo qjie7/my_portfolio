@@ -106,7 +106,9 @@ h3 {
 }
 
 .section__title {
+  margin-top: 1.8em;
   margin-bottom: 0.25em;
+  margin-left: 0.2em;
 }
 
 .section__title--intro {
@@ -119,15 +121,16 @@ h3 {
 
 .section__subtitle {
   margin: 0;
-  font-size: var(--fs-h3);
+  font-size: var(--fs-body);
 }
 
 .section__subtitle--intro,
 .section__subtitle--about {
   background: var(--clr-accent);
-  padding: 0.25em 1em;
+  padding: 0.25em 2em;
   font-family: var(--ff-secondary);
   margin-bottom: 1em;
+  border-radius: 0.5em;
 }
 
 .section__subtitle--work {
@@ -145,6 +148,9 @@ header {
 
 .logo {
   max-width: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .nav {
@@ -252,6 +258,7 @@ header {
 
 .intro__img {
   box-shadow: var(--bs);
+  border-radius: 0.5em;
 }
 
 .section__subtitle--intro {
@@ -285,6 +292,95 @@ header {
     position: relative;
     left: -1.5em;
     width: calc(100% + 1.5em);
+  }
+}
+
+/*  My services section  */
+
+.my-services {
+  background-color: var(--clr-dark);
+  background-image: url(../img/services-bg.jpg);
+  background-size: cover;
+  /* background-blend-mode: multiply; */
+  color: var(--clr-light);
+  text-align: center;
+}
+
+.section__title--services {
+  color: var(--clr-accent);
+  position: relative;
+}
+
+.section__title--services::after {
+  content: "";
+  display: block;
+  width: 2em;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background: var(--clr-light);
+  opacity: 0.25;
+}
+
+.services {
+  margin-bottom: 4em;
+}
+
+.service {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .services {
+    display: flex;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .service + .service {
+    margin-left: 2em;
+  }
+}
+
+.about-me {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-me__img {
+  box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+  .about-me {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas:
+      "title img"
+      "subtitle img"
+      "text img";
+    grid-column-gap: 2em;
+  }
+
+  .section__title--about {
+    grid-area: title;
+  }
+
+  .section__subtitle--about {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    position: relative;
+    left: -1em;
+    width: calc(100% + 2em);
+    padding-left: 1em;
+    padding-right: calc(200px + 4em);
+  }
+
+  .about-me__img {
+    grid-area: img;
+    position: relative;
+    z-index: 2;
   }
 }
 
